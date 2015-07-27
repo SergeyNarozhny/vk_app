@@ -1,0 +1,16 @@
+<div ng-if="modal.flag">
+	<div id="popup_overlay" tabindex="0"></div>
+	<div id="popup_body" class="text-center">
+		<span class="glyphicon glyphicon-chevron-left" ng-click="goLeft();"></span>
+		<span class="glyphicon glyphicon-chevron-right" ng-click="goRight();"></span>
+		<img ng-src="{{activeImg.photosBig}}" class="img-responsive" />
+		<div class="popup_info">
+			<span class="date" ng-bind="activeImg.date"></span>
+			<span class="divider">|</span>
+			<span class="likes_count" ng-bind="activeImg.likes"></span>
+			<span class="comments_count" ng-bind="activeImg.comments"></span>
+			<span class="divider">|</span>
+			<a ng-href="{{activeImg.photosBig}}" target="_blank">Open original</a>
+		</div>
+	</div>
+</div>

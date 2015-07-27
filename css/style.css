@@ -1,0 +1,147 @@
+* {
+	outline: none!important;
+}
+#main_container {
+	width:960px;
+	margin:10px auto;
+}
+.my_icon {
+	padding:0px 4px;
+}
+.icon_wrapper {
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	padding: 7px 8px;
+}
+.icon_wrapper.star {
+	background: #fafafa;
+	border: 1px solid #ccc;
+	padding: 4px 8px;
+}
+.icon_wrapper > span {
+	font-size: 13px;
+}
+#img_source .row {
+	margin-bottom: 2em;
+}
+#img_source .info-panel {
+	position: absolute;
+	top: -20px;
+	left:0;
+	height: 20px;
+	width: 100%;
+	display: inline-block;
+	background: #fff;
+	opacity: 0;
+	-webkit-transition: opacity .3s;
+	-ms-transition: opacity .3s;
+	-o-transition: opacity .3s;
+	-moz-transition: opacity .3s;
+	transition: opacity .3s;
+}
+#img_source > .row > div:hover .info-panel {
+	opacity: 1;
+}
+#img_source .img-responsive {
+/*	max-height: 70px;
+    display: block;
+    margin: 0 auto;*/
+}
+.glyphicon-heart {
+	color: red;
+}
+.glyphicon-comment {
+	color: blue;
+}
+
+/* modal */
+#popup_overlay {
+	background: #1e1e1e;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	filter: alpha(opacity=93);
+	opacity: .93;
+	z-index:100;
+}
+#popup_body {
+	background: #fff;
+	position: fixed;
+	top:10%;
+	left:20%;
+	width:60%;
+	height:80%;
+	z-index: 200;
+}
+#popup_body .glyphicon {
+	position: absolute;
+	padding-top: 30%;
+	font-size: 3em;
+	color: #fff;
+	height: 80%;
+	width: 40%;
+	filter: alpha(opacity=50);
+	opacity: .5;
+	z-index:105;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+#popup_body .glyphicon-chevron-left {
+	left: -.9em;
+	text-align: left;
+}
+#popup_body .glyphicon-chevron-right {
+	right: -.9em;
+	text-align: right;
+}
+#popup_body img {
+	max-height: 80%;
+	display: inline-block;
+	padding: 20px 10px;
+}
+#popup_body .popup_info {
+	position: absolute;
+	bottom: 0;
+	height: 20%;
+	width: 100%;
+	padding-top: 1em;
+}
+#popup_body .popup_info .likes_count, #popup_body .popup_info .comments_count {
+	font-family: 'Glyphicons Halflings';
+}
+#popup_body .popup_info .likes_count:before {
+	content: "\e005";
+}
+#popup_body .popup_info .comments_count:before {
+	content: "\e111";
+}
+
+/* summary */
+#img_source img, #popup_body .glyphicon {
+	cursor: pointer;
+}
+#popup_body .popup_info .likes_count:before, #popup_body .popup_info .comments_count:before,
+#img_source .info-panel > .glyphicon:before {
+	font-size: .8em;
+	margin: 0 0.3em;
+	filter: alpha(opacity=50);
+	opacity: .5;
+}
+
+/* pagination */
+.pagination>.active>a, .pagination>.active>a:focus,
+.pagination>.active>a:hover, .pagination>.active>span,
+.pagination>.active>span:focus, .pagination>.active>span:hover {
+	background-color: #e6e6e6;
+	border-color: #ccc;
+	color:#333;
+}
+.pagination>li>a, .pagination>li>span {
+	border: 1px solid #ccc;
+}

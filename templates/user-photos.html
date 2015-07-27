@@ -1,0 +1,34 @@
+<form class="form-inline">
+	<div class="form-group">
+		<div class="input-group">
+			<div class="input-group-addon my_icon">
+				<div class="icon_wrapper"><span class="glyphicon glyphicon-user"></span></div>
+			</div>
+			<input type="text" class="form-control" placeholder="NICK/ID" ng-model="user">
+		</div>
+	</div>
+	<button type="submit" class="btn btn-default" ng-click="findWall(user);" ng-disabled="!user">Показать</button>
+	<button class="btn icon_wrapper star" ng-click="findWall('star');"><span class="glyphicon glyphicon-star"></span></button>
+</form>
+
+<p>&nbsp;</p>
+<div class="alert alert-danger" role="alert" ng-if="error.msg" ng-bind="error.msg"></div>		
+<p>&nbsp;</p>
+
+<div class="container-fluid" id="img_source" ng-hide="error.msg || hideWall" >
+	<div class="row" dir-paginate="wallChunk in allWall | itemsPerPage:10" current-page="currentPage" total-items="totalItems">
+	    <div ng-repeat="wallPart in ::wallChunk" ng-class="{'col-xs-2 col-xs-offset-1': $index==0, 'col-xs-2': $index!=0 }" >
+	    	<div class="block_wrapper thumbnail">
+		    	<div class="info-panel">
+		    		<span class="glyphicon glyphicon-heart" ng-bind="wallPart.likes"></span>
+		    		<span class="glyphicon glyphicon-comment" ng-bind="wallPart.comments"></span>
+		    	</div>
+		    	<img ng-src="{{wallPart.photosSmall}}" class="img-responsive" ng-click="openPopup($index, $parent.$index);" />
+	    	</div>
+	    </div>
+	</div>
+
+	<dir-pagination-controls boundary-links="true" direction-links="true" on-page-change="pageChanged(newPageNumber);"></dir-pagination-controls>
+</div>
+
+<popup-gallery active-img="activeImg" modal="modal"></popup-gallery>
